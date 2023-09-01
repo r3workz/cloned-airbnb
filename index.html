@@ -6,8 +6,289 @@
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Airbnb</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/homestyle.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script src="scripts/index.js" defer></script>
+
+<!--	Fonts-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
+<script>0</script>
+<header>
+	<nav id="myNavBar">
+		<div id="navLeftBox">
+			<a href="#" ><img src="assets/logo-white.png" alt="Logo" onclick="showHideHomePage(true)"></a>
+		</div>
+		<div id="navMidBox">
+			<a href="#" class="navLinks navLinkText" onclick="noLinkAlert()">Places to Stay</a>
+			<a href="#" class="navLinks navLinkText" onclick="noLinkAlert()">Experiences</a>
+			<a href="#" class="navLinks navLinkText" onclick="noLinkAlert()">Online Experiences</a>
+		</div>
+		<div id="navRightBox">
+			<a href="#" class="navLinks navLinkText" onclick="noLinkAlert()">Become a Host</a>
+			<a href="#" class="navLinks"><img src="assets/globe.png" alt="globe" onclick="noLinkAlert()"></a>
+			<div id="navMenu" onclick="noLinkAlert()">
+				<img id="navMenuBtn" src="assets/menu.png" alt="globe">
+				<img id="navUserBtn" src="assets/person.png" alt="user">
+			</div>
+		</div>
+	</nav>
+	<div id="searchBox">
+		<div class="searchItems">
+			<label for="searchInputLocation">Location</label>
+			<input id="searchInputLocation" type="search" name="location" placeholder="Where are you Going?">
+		</div>
+		<div class="searchItems">
+			<label for="searchInputDateIn">Check In</label>
+			<input id="searchInputDateIn" type="text" name="checkIn" placeholder="Add Dates" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" disabled>
+		</div>
+		<div class="searchItems">
+			<label for="searchInputDateOut">Check Out</label>
+			<input id="searchInputDateOut" type="text" name="checkOut" placeholder="Add Dates" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" disabled>
+		</div>
+		<div class="searchItems">
+			<label for="searchInputGuests">Guests</label>
+			<input id="searchInputGuests" type="text" name="guests" min="1" max="100" placeholder="Add Guests" onfocus="(this.type='number')" onblur="if(!this.value) this.type='text'" disabled>
+		</div>
+		<img src="assets/search-button.png" alt="Search" id="searchButton">
+	</div>
 
+</header>
+<main id="homePage">
+	<section id="banner">
+		<img id="bannerImg" src="https://s3-alpha-sig.figma.com/img/8021/96a6/83d8b4f496c94cf0a33728d8f6e90e4b?Expires=1694390400&Signature=cpkVWeP5gd6EGKOsU1J5BXEZv5rIxez1TFu9h~PZb5HT~AJzSMUno3~~N0LmokRM~EPx6QqfkJ3k2iSfc-FvgSbqXBk0s9U1o~mWSyRiAWTmGnixShbM20M7L409X-UywJXnjHk73hjzbWwjzDXEfmebA-ZuJXmebCYWuwDBfrXREvxPK2gJk6cvqwVzOaLZJucS43y6G~Et6hi54vI6k4pFM3bZp8T3gVJ1GzP9d8d~bJCI0CDY05Uk2adzdE-bYfXj2QUR2vseVxLGeo7Pe-RvSDJLv4EDey62dzK4DTbWRgLTsXpQniBVOq3IjdKCJ5Pxg62wvIPw59ugW9AO4g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="Banner">
+		<div id="bannerTexts">
+			<h1>Not sure where to go? Perfect.</h1>
+			<button id="bannerBtn"><span>I'm flexible</span></button>
+		</div>
+	</section>
+	<section id="citySection">
+		<h2>Inspiration for your next trip</h2>
+		<div id="cityCards">
+			<div class="cityCard">
+				<div class="cityCardImage">
+					<img src="assets/place1.png" alt="Nashville">
+				</div>
+				<div id="Nash" class="cityCardText">
+					<div class="cardTextHead">Nashville</div>
+					<div>53 miles away</div>
+				</div>
+			</div>
+			<div class="cityCard">
+				<div class="cityCardImage">
+					<img src="assets/place2.png" alt="South Haven">
+				</div>
+				<div id="SHaven" class="cityCardText">
+					<div class="cardTextHead">South Haven</div>
+					<div>168 miles away</div>
+				</div>
+			</div>
+			<div class="cityCard">
+				<div class="cityCardImage">
+					<img src="assets/place3.png" alt="Stanton">
+				</div>
+				<div id="Stan" class="cityCardText">
+					<div class="cardTextHead">Stanton</div>
+					<div>192 miles away</div>
+				</div>
+			</div>
+			<div class="cityCard">
+				<div class="cityCardImage">
+					<img src="assets/place4.png" alt="New Buffalo">
+				</div>
+				<div id="nBuff" class="cityCardText">
+					<div class="cardTextHead">New Buffalo</div>
+					<div>130 miles away</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="discoverSection">
+		<h2>Discover Airbnb Experiences</h2>
+		<div id="discoverCards">
+			<div class="discoverCard">
+				<img src="https://s3-alpha-sig.figma.com/img/3679/a298/196b41cd98272a64e19b9681beb746f0?Expires=1694390400&Signature=Nt9aAqgU-5u~cfG7VE~b4nD~tpN5aUZNEMM3m8GiHqbW6VDLOkqFAsiZOg~UyYw-V0-v8-piLv1cFDf6vi1KB4cnYk-VDnZnoWhhbNNGtEopUgUhzW9PXgwiygfH6aUu2jxM10zgjlr17VnrnpYrFSQEJTz2oIZKSZUg7QD-wnND-5PaohBbkE7IphiMIVNW3PLIxoA90jPkZjsizS-rT3YObcHxze2RnO5VHEHNSjvqPKFVd9rmXGv7IfHtbywy5pa5lC6RS9BLvRydQ4W5-UpEuau8ojKWQweR70Z-M99diE2~rBp4-gX1rM5bxcVn4ZoOYqxaYDTx-23Msf1oTg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="discoverImage1" class="discoverImage">
+				<div class="discoverText">
+					<div class="cardTextHead">
+						Things to do on your trip
+					</div>
+					<button class="discoverButton">Experiences</button>
+				</div>
+			</div>
+			<div class="discoverCard">
+				<img src="https://s3-alpha-sig.figma.com/img/7894/1428/a63173a16c7efe522cab3d32fa5975ee?Expires=1694390400&Signature=c8byy6KjtaX-QRt1ROFINcl-p3F9I6ADGwKBbs50wEOj-y2z9AajlEsCqLPbUDE~UYHj7ZPMFxe-hVJ2NAHy1qIBT~pWJnawI2O0zG2~Hvpb2HTrdEOQPMxTY14f-YSjeEpTem0vqYNzonSTvkxzH-D~B6Pt8IhTSIfo6pRP89~EnfuX9H0zkJzuQUOxBu4NlNHt7SI5AzmWCqVJl8EAjbwtyp3IjGAmCQSWjE7UoclGowvtI38eVHToWE0dTm~lYUzAIVTsuEwA5IfK9WJKKHV67O~ItFQRBfXLA5qr3soIf7Q5V-H-Jr7GOEtmLeE-aF-Z-AT-3xCtDwLpQFBd5w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="discoverImage2" class="discoverImage">
+				<div class="discoverText ">
+					<div class="cardTextHead">
+						Things to do from home
+					</div>
+
+					<button class="discoverButton">Online Experiences</button>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="giftCardsSection">
+		<div>
+			<h2>Shop Airbnb <br> gift cards</h2>
+			<button>Learn More</button>
+		</div>
+		<img src="assets/gift-cards.png" alt="Gift Cards">
+	</section>
+	<section id="questionSection">
+		<img src="assets/bt.png" alt="Questions Image">
+		<h2>Questions about hosting?</h2>
+		<button>Ask a Superhost</button>
+	</section>
+	<section id="inspirationSection">
+		<h2>Inspiration for future getaways</h2>
+		<div id="destCategories">
+			<div class="dCat active">Destination for Arts & Culture</div>
+			<div class="dCat">Destination for Outdoor adventure</div>
+			<div class="dCat">Mountain cabins</div>
+			<div class="dCat">Beach destinations</div>
+			<div class="dCat">Popular destinations</div>
+			<div class="dCat">Unique stays</div>
+		</div>
+		<div id="insDList">
+			<div class="insDListItems">
+				<div class="dItemTitle">Title</div>
+				<div class="dItemSubTitle">SubTitle</div>
+			</div>
+			<div class="insDListItems">
+				<div class="dItemTitle">Title</div>
+				<div class="dItemSubTitle">SubTitle</div>
+			</div>
+			<div class="insDListItems">
+				<div class="dItemTitle">Title</div>
+				<div class="dItemSubTitle">SubTitle</div>
+			</div>
+			<div class="insDListItems">
+				<div class="dItemTitle">Title</div>
+				<div class="dItemSubTitle">SubTitle</div>
+			</div>
+			<div class="insDListItems">
+				<div class="dItemTitle">Title</div>
+				<div class="dItemSubTitle">SubTitle</div>
+			</div>
+			<div class="insDListItems">
+				<div class="dItemTitle">Title</div>
+				<div class="dItemSubTitle">SubTitle</div>
+			</div>
+			<div class="insDListItems">
+				<div class="dItemTitle">Title</div>
+				<div class="dItemSubTitle">SubTitle</div>
+			</div>
+			<div class="insDListItems">
+				<div class="dItemTitle">Title</div>
+				<div class="dItemSubTitle">SubTitle</div>
+			</div>
+			<div class="insDListItems">
+				<div class="dItemTitle">Title</div>
+				<div class="dItemSubTitle">SubTitle</div>
+			</div>
+			<div class="insDListItems">
+				<div class="dItemTitle">Title</div>
+				<div class="dItemSubTitle">SubTitle</div>
+			</div>
+			<div class="insDListItems">
+				<div class="dItemTitle">Title</div>
+				<div class="dItemSubTitle">SubTitle</div>
+			</div>
+			<div class="insDListItems">
+				<div class="dItemTitle">Title</div>
+				<div class="dItemSubTitle">SubTitle</div>
+			</div>
+		</div>
+	</section>
+</main>
+<main id="searchPage" class="hiddenElement">
+	<div id="listings-container">
+		<!-- Listings will be appended here -->
+	</div>
+	<div id="map">
+	</div>
+</main>
+<footer>
+	<div id="footerTop">
+		<div>
+			<h3 >Support</h3>
+			<div>Help Center</div>
+			<div>Safety information</div>
+			<div>Cancellation options</div>
+			<div >Our COVID-19 Response</div>
+			<div>Supporting people with disabilities</div>
+			<div>Report a neighborhood concern</div>
+		</div>
+		<div >
+			<h3>Community</h3>
+			<div>Airbnb.org: disaster relief housing</div>
+			<div>Support: Afghan refugees</div>
+			<div >Celebrating diversity & belonging</div>
+			<div>Combating discrimination</div>
+		</div>
+		<div>
+			<h3>Hosting</h3>
+			<div >Try hosting</div>
+			<div>AirCover: protection for Hosts</div>
+			<div >Explore hosting resources</div>
+			<div>Visit our community forum</div>
+			<div>How to host responsibly</div>
+		</div>
+		<div>
+			<h3>About</h3>
+			<div>Newsroom</div>
+			<div >Learn about new features</div>
+			<div>Letter from our founders</div>
+			<div>Careers</div>
+			<div>Investors</div>
+			<div>Airbnb Luxe</div>
+		</div>
+	</div>
+	<div id="footerBottom">
+		<div id="fbLeft">
+			<div >© 2022 Airbnb, Inc.</div>
+			·<div>Privacy</div>
+			·<div>Terms</div>
+			·<div>Sitemap</div>
+		</div>
+		<div id="fbRight">
+			<div>
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+					<path d="M19.25 12C19.25 16.0041 16.0041 19.25 12 19.25C7.99594 19.25 4.75 16.0041 4.75 12C4.75 7.99594 7.99594 4.75 12 4.75C16.0041 4.75 19.25 7.99594 19.25 12Z" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M15.25 12C15.25 16.5 13.2426 19.25 12 19.25C10.7574 19.25 8.75 16.5 8.75 12C8.75 7.5 10.7574 4.75 12 4.75C13.2426 4.75 15.25 7.5 15.25 12Z" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M5 12H19" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+				<span>English (US)</span>
+			</div>
+			<div>
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+					<path d="M17.25 6.75H9.375C7.92525 6.75 6.75 7.92525 6.75 9.375C6.75 10.8247 7.92525 12 9.375 12H14.625C16.0747 12 17.25 13.1753 17.25 14.625C17.25 16.0747 16.0747 17.25 14.625 17.25H6.75" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M11.75 19.25V4.75" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+				<span>USD </span>
+			</div>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+			<img src="assets/facebook.png" alt="fb">
+			<img src="assets/twitter.png" alt="X">
+			<img src="assets/insta.png" alt="insta">
+		</div>
+	</div>
+</footer>
+
+<!-- prettier-ignore -->
+<script>
+	(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+		key: "AIzaSyCNL5Q-pgolTPAbWE1s_cwf7-t5YVYE__0",
+		v: "weekly",
+		// Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+		// Add other bootstrap parameters as needed, using camel case.
+	});
+</script>
 </body>
 </html>
