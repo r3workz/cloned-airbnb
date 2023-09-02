@@ -6,12 +6,13 @@
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Airbnb</title>
+	<link rel="shortcut icon" href="assets/airbnb-icon.svg" type="image/x-icon">
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/homestyle.css">
 	<link rel="stylesheet" href="css/index.css">
 	<script src="scripts/index.js" defer></script>
 
-<!--	Fonts-->
+	<!--	Fonts-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -23,7 +24,7 @@
 <header>
 	<nav id="myNavBar">
 		<div id="navLeftBox">
-			<a href="#" ><img src="assets/logo-white.png" alt="Logo" onclick="showHideHomePage(true)"></a>
+			<a href="#"><img src="assets/logo-white.png" alt="Logo" onclick="showHideHomePage(true)"></a>
 		</div>
 		<div id="navMidBox">
 			<a href="#" class="navLinks navLinkText" onclick="noLinkAlert()">Places to Stay</a>
@@ -32,7 +33,7 @@
 		</div>
 		<div id="navRightBox">
 			<a href="#" class="navLinks navLinkText" onclick="noLinkAlert()">Become a Host</a>
-			<a href="#" class="navLinks"><img src="assets/globe.png" alt="globe" onclick="noLinkAlert()"></a>
+			<a href="https://reniyal.notion.site/Airbnb-clone-4ad3fab7c4aa45d3975326a5af7052cc?pvs=4" target="_blank" class="navLinks"><img src="assets/globe.png" alt="Tutorial Link"></a>
 			<div id="navMenu" onclick="noLinkAlert()">
 				<img id="navMenuBtn" src="assets/menu.png" alt="globe">
 				<img id="navUserBtn" src="assets/person.png" alt="user">
@@ -46,15 +47,18 @@
 		</div>
 		<div class="searchItems">
 			<label for="searchInputDateIn">Check In</label>
-			<input id="searchInputDateIn" type="text" name="checkIn" placeholder="Add Dates" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" disabled>
+			<input id="searchInputDateIn" type="text" name="checkIn" placeholder="Add Dates"
+			       onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'">
 		</div>
 		<div class="searchItems">
 			<label for="searchInputDateOut">Check Out</label>
-			<input id="searchInputDateOut" type="text" name="checkOut" placeholder="Add Dates" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" disabled>
+			<input id="searchInputDateOut" type="text" name="checkOut" placeholder="Add Dates"
+			       onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'">
 		</div>
 		<div class="searchItems">
 			<label for="searchInputGuests">Guests</label>
-			<input id="searchInputGuests" type="text" name="guests" min="1" max="100" placeholder="Add Guests" onfocus="(this.type='number')" onblur="if(!this.value) this.type='text'" disabled>
+			<input id="searchInputGuests" type="text" name="guests" min="1" max="100" placeholder="Add Guests"
+			       onfocus="(this.type='number')" onblur="if(!this.value) this.type='text'">
 		</div>
 		<img src="assets/search-button.png" alt="Search" id="searchButton">
 	</div>
@@ -211,39 +215,38 @@
 	<div id="listings-container">
 		<!-- Listings will be appended here -->
 	</div>
-	<div id="map">
-	</div>
+	<div id="map"></div>
 </main>
 <footer>
 	<div id="footerTop">
 		<div>
-			<h3 >Support</h3>
+			<h3>Support</h3>
 			<div>Help Center</div>
 			<div>Safety information</div>
 			<div>Cancellation options</div>
-			<div >Our COVID-19 Response</div>
+			<div>Our COVID-19 Response</div>
 			<div>Supporting people with disabilities</div>
 			<div>Report a neighborhood concern</div>
 		</div>
-		<div >
+		<div>
 			<h3>Community</h3>
 			<div>Airbnb.org: disaster relief housing</div>
 			<div>Support: Afghan refugees</div>
-			<div >Celebrating diversity & belonging</div>
+			<div>Celebrating diversity & belonging</div>
 			<div>Combating discrimination</div>
 		</div>
 		<div>
 			<h3>Hosting</h3>
-			<div >Try hosting</div>
+			<div>Try hosting</div>
 			<div>AirCover: protection for Hosts</div>
-			<div >Explore hosting resources</div>
+			<div>Explore hosting resources</div>
 			<div>Visit our community forum</div>
 			<div>How to host responsibly</div>
 		</div>
 		<div>
 			<h3>About</h3>
 			<div>Newsroom</div>
-			<div >Learn about new features</div>
+			<div>Learn about new features</div>
 			<div>Letter from our founders</div>
 			<div>Careers</div>
 			<div>Investors</div>
@@ -252,10 +255,13 @@
 	</div>
 	<div id="footerBottom">
 		<div id="fbLeft">
-			<div >© 2022 Airbnb, Inc.</div>
-			·<div>Privacy</div>
-			·<div>Terms</div>
-			·<div>Sitemap</div>
+			<div>© 2022 Airbnb, Inc.</div>
+			·
+			<div>Privacy</div>
+			·
+			<div>Terms</div>
+			·
+			<div>Sitemap</div>
 		</div>
 		<div id="fbRight">
 			<div>
@@ -273,21 +279,19 @@
 				</svg>
 				<span>USD </span>
 			</div>
-			<div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-			<img src="assets/facebook.png" alt="fb">
-			<img src="assets/twitter.png" alt="X">
-			<img src="assets/insta.png" alt="insta">
+			<div class="socialLinks">&nbsp;&nbsp;&nbsp;&nbsp;
+				<img src="assets/facebook.png" alt="fb">
+				<img src="assets/twitter.png" alt="X">
+				<img src="assets/insta.png" alt="insta">
+			</div>
 		</div>
 	</div>
 </footer>
-
 <!-- prettier-ignore -->
 <script>
 	(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
 		key: "AIzaSyCNL5Q-pgolTPAbWE1s_cwf7-t5YVYE__0",
 		v: "weekly",
-		// Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
-		// Add other bootstrap parameters as needed, using camel case.
 	});
 </script>
 </body>

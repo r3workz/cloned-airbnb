@@ -1,5 +1,5 @@
 /*Nav Bar*/
-#myNavBar{
+#myNavBar {
 	padding: 1rem 0;
 	display: flex;
 	flex-direction: row;
@@ -7,25 +7,29 @@
 	justify-content: space-between;
 	align-items: center;
 }
-#myNavBar > div{
+
+#myNavBar > div {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	align-items: center;
 	gap: 1.25rem;
 }
-.navLinks{
+
+.navLinks {
 	text-decoration: none;
 	color: white;
 	cursor: pointer;
 	display: inline-block;
 	position: relative;
 }
-.navLinks:hover{
+
+.navLinks:hover {
 	transform: scale(1.1);
 	transition: ease-in-out 200ms;
 }
-.navLinkText:hover::after{
+
+.navLinkText:hover::after {
 	content: '';
 	height: 2px;
 	width: 20%;
@@ -35,7 +39,7 @@
 	bottom: -0.5rem;
 }
 
-#navMenu{
+#navMenu {
 	padding: 0.25rem 0.5rem 0.25rem 1rem;
 	display: flex;
 	background-color: white;
@@ -43,11 +47,12 @@
 	gap: 0.5rem;
 	cursor: pointer;
 }
+
 /*Nav Bar*/
 
 
 /*Search*/
-#searchBox{
+#searchBox {
 	width: fit-content;
 	height: fit-content;
 	margin: auto;
@@ -58,14 +63,15 @@
 	border-radius: 6.25rem;
 	padding: 0.25rem 0.5rem 0.25rem 2rem;
 	gap: 2rem;
-	overflow-y: scroll;
 }
-#searchBox>*{
+
+#searchBox > * {
 	display: flex;
 	flex-direction: column;
 	justify-content: left;
 }
-#searchButton{
+
+#searchButton {
 	padding: 0;
 	margin: 0;
 	background-color: transparent;
@@ -73,17 +79,20 @@
 	outline: none;
 	cursor: pointer;
 }
-#searchButton:active{
+
+#searchButton:active {
 	translate: 3px 1px;
 }
+
 #searchButton:hover {
 	scale: 1.1;
 }
+
 /*Search*/
 
 /*Search Page*/
 /*Search Results*/
-#searchPage{
+#searchPage {
 	height: 85vh;
 	/*width: 100vw;*/
 	padding: 0 0 0 2%;
@@ -93,6 +102,7 @@
 	grid-template-columns: 3fr 2fr;
 	/*overflow-y: scroll;*/
 }
+
 #listings-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -101,84 +111,205 @@
 	gap: 1rem;
 	overflow-y: scroll;
 }
-.listing-card{
+
+.listing-card {
 	width: 100%;
-	max-height: 25vh;
+	/*max-height: 35vh;*/
 	display: grid;
 	grid-template-columns: 3fr 5fr;
-	gap: 1rem;
+	/*gap: 1rem;*/
 	align-items: center;
+	position: relative;
+	gap: 1rem;
 }
-.listing-card > img{
+
+.listing-card > img {
 	width: 100%;
-	height: 100%;
-	max-height: 23vh;
+	min-height: 12.5rem;
+	height: 26vh;
+	max-height: 16rem;
 	object-fit: fill;
 	border-radius: 0.75rem;
 }
+
 .listing-info {
-	align-self: start;
-	justify-self: start;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	font-size: 0.875rem;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 1.25rem;
 	color: #6B7280;
-	overflow: hidden;
-	/*white-space: nowrap;*/
-	text-overflow: ellipsis;
+	text-transform: capitalize;
 }
 
-.listing-info div{width: 100%}
+.listing-card button {
+	/*width: 90%;*/
+	color: white;
+	/*grid-column: span 2;*/
+	background-color: black;
+	/*margin: 0.5rem auto auto;*/
+}
+
+.dirBtn img {
+	height: 1.25rem;
+}
+
+.rareFind {
+	background-color: green;
+	color: white;
+	width: fit-content;
+	border-radius: 0.5rem;
+	padding: 0.1rem 0.25rem;
+	opacity: 0.8;
+	position: absolute;
+	top: 0;
+	left: 1rem;
+}
+
+.listing-info div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	margin-right: 1rem;
+}
+
+.listingRating span {
+	color: orange;
+}
+
+.listingPrice {
+	font-style: italic;
+	font-weight: 500;
+	color: #000;
+}
+
+.listingPrice span {
+	font-weight: 400;
+	color: #6B7280;
+}
+
+/*host*/
+.hostBox {
+	width: 4rem;
+	height: 4rem;
+	position: absolute;
+	right: 1rem;
+	bottom: 1rem;
+}
+
+img.hostThumbnail {
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.superHost {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+/*host*/
+
+/*Booking dialog*/
+.modalBookingCost {
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+	padding: 1rem 2rem;
+	color: #999;
+	background-color: #222;
+	border-radius: 0.75rem;
+}
+
+.modalBookingCost h3 {
+	color: white;
+}
+
+.modalBookingCost p span {
+	color: white;
+}
+
+/*Booking dialog*/
+
 /*Search Results*/
 
 /*Map*/
-#map{
+#map {
 	width: 100%;
 	height: 80vh;
 	margin-top: 1rem;
 	border-radius: 0.75rem;
 }
 
-.markerLabel{
+.markerLabel {
 	font-size: 20px;
-
 }
+
 /*Map*/
 /*Search Page*/
 
 /*Footer*/
-#footerTop{
+#footerTop {
 	display: grid;
 	grid-template-columns:1fr 1fr 1fr 1fr;
 	row-gap: 2rem;
 }
-#footerTop>div{
-	display: flex; flex-direction: column; gap: 1rem; justify-content: start;align-items: start;
+
+#footerTop > div {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	justify-content: start;
+	align-items: start;
 }
-#footerTop>div>div{
+
+#footerTop > div > div {
 	cursor: pointer;
 }
-#footerBottom{
+
+#footerBottom {
 	padding: 2rem 0 1rem 0;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 }
-#footerBottom>div{
+
+#footerBottom > div {
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
 	justify-content: start;
 	align-items: center;
 }
-#fbLeft *:not(:first-child){
+
+#fbLeft *:not(:first-child) {
 	cursor: pointer;
 }
-#fbRight>div{
+
+#fbRight > div {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
+.socialLinks {
+	gap: 1rem;
+}
+
+.socialLinks * {
+	cursor: pointer;
+}
+
 /*Footer*/
